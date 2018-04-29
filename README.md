@@ -1,4 +1,4 @@
-# Scheduler Cron API
+# AWS Job Scheduler
 
 ![Project Architecture](/docs/architecture.png?raw=true "Project Architecture")
 
