@@ -1,0 +1,104 @@
+{
+  "name": "@bermanboris/scheduler-cron-api",
+  "description":
+    "This package is responsible for adding up cron jobs to the queue when the time is due.",
+  "version": "1.0.3",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "babel --ignore **__mocks__/*.js src --out-dir dist",
+    "build-watch": "babel --ignore **__mocks__/*.js src --out-dir dist -w",
+    "start": "NODE_ENV=production node -r esm src/server.js",
+    "watch":
+      "nodemon -d 1 --ignore logs/ --exec node --require esm src/server.js",
+    "test": "jest"
+  },
+  "eslintConfig": {
+    "parser": "babel-eslint",
+    "env": {
+      "node": true,
+      "jest": true
+    },
+    "extends": ["airbnb", "prettier"],
+    "rules": {
+      "class-methods-use-this": 0,
+      "no-unused-vars": [
+        1,
+        {
+          "argsIgnorePattern": "res|next|^err"
+        }
+      ],
+      "no-restricted-syntax": 0,
+      "no-await-in-loop": 0,
+      "import/prefer-default-export": 0,
+      "no-console": 0,
+      "consistent-return": 0
+    }
+  },
+  "babel": {
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "node": 8
+          }
+        }
+      ]
+    ],
+    "plugins": [
+      "syntax-class-properties",
+      "transform-class-properties",
+      "transform-object-rest-spread",
+      "dynamic-import-node"
+    ]
+  },
+  "dependencies": {
+    "aws-sdk": "^2.224.1",
+    "big-time": "^2.0.1",
+    "body-parser": "^1.18.2",
+    "common-tags": "^1.7.2",
+    "cron-parser": "^2.5.0",
+    "debug": "^3.1.0",
+    "esm": "^3.0.17",
+    "express": "^4.16.3",
+    "moment": "^2.22.1",
+    "uuid": "^3.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-jest": "^22.4.3",
+    "babel-plugin-dynamic-import-node": "^1.2.0",
+    "babel-plugin-syntax-class-properties": "^6.13.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-runtime": "^6.23.0",
+    "babel-preset-env": "^1.6.1",
+    "eslint": "^4.9.0",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^6.0.2",
+    "eslint-plugin-react": "^7.4.0",
+    "jest": "^22.4.3",
+    "nodemon": "^1.17.3",
+    "prettier-eslint": "^8.8.1"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "verbose": true
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bermanboris/scheduler-cron-api.git"
+  },
+  "keywords": ["cron", "aws", "sqs"],
+  "author": "Boris Berman",
+  "bugs": {
+    "url": "https://github.com/bermanboris/scheduler-cron-api/issues"
+  },
+  "homepage": "https://github.com/bermanboris/scheduler-cron-api#readme"
+}
