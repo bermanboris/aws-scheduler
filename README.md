@@ -1,6 +1,9 @@
 # Scheduler Cron API
 
-This package is responsible for adding up cron jobs to the queue when the time is due.
+This package is responsible for creating new scheduled jobs, and adding them up to the queue when their time is due.
+
+When cron service is started, it connects to DynamoDB table, and gets previously created jobs.
+After jobs are fetched, cron service schedules the jobs accordingly to their time format (cron / specific ISO date). Cron service is smart enough to work with recurrent jobs (such as cache clean every night). Recurrent jobs implemented using ES6 iterators.
 
 ## Prerequisites
 

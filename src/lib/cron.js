@@ -41,7 +41,7 @@ class Cron {
     const scheduledJobs = jobs.map(job => {
       const promise = new Promise(async resolve => {
         this.resolvers.push(resolve);
-        const iterableDate = helpers.createIterableDate(job.cron || job.date);
+        const iterableDate = helpers.dateGenerator(job.cron || job.date);
 
         for (const nextDate of iterableDate) {
           const timeUntilScheduledDate = helpers.getMSUntilDate(nextDate);
