@@ -108,6 +108,12 @@ startJobs([userReminderJob]);
 
 "createJob" function provides us with an easy API to setup the jobs listener. You must provide it a configuration object with the job name, and handleJob method that receives the data object from the job, and done method. After you job is finished, you have to call "done" method, to delete it from the queue. If job is failed for some reason, you want to return it to the queue. To mark job as "failed" and return it to the queue, you have to call "done" method with an Error object.
 
+## Build package before publishing to NPM
+
+```bash
+yarn build
+```
+
 ## Tests
 
 ```bash
