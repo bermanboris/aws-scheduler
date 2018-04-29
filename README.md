@@ -81,7 +81,7 @@ Example of task that executes every 30 seconds:
 ```js
 {
   "name": "Check for software updates",
-  "date": "*/30 * * * * *",
+  "cron": "*/30 * * * * *",
   "data": { "name": "winrar" }
 }
 ```
