@@ -1,8 +1,8 @@
 {
-  "name": "@bermanboris/scheduler-cron-api",
+  "name": "aws-scheduler",
   "description":
     "This package is responsible for adding up cron jobs to the queue when the time is due.",
-  "version": "1.0.3",
+  "version": "1.0.1",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
   "license": "MIT",

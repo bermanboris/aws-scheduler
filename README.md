@@ -21,7 +21,7 @@ What things you need to install the software and how to install them
 A step by step series of examples that tell you have to get a development env running
 
 ```bash
-yarn add @bermanboris/scheduler-cron-api
+yarn add aws-scheduler
 ```
 
 You have to setup these environment variables before the use:
@@ -36,7 +36,7 @@ DYNAMODB_JOBS_TABLE=scheduled_jobs
 ## Usage
 
 ```js
-import cronApi from "@bermanboris/scheduler";
+import cronApi from "aws-scheduler";
 
 const cron = cronApi();
 cron.start({ port: 8080 });
@@ -93,7 +93,7 @@ After job is added to the queue, job handler has to pull it off, do it's thing, 
 Let's create job handler for user reminder example:
 
 ```js
-import { createJob, startJobs } from "@bermanboris/scheduler";
+import { createJob, startJobs } from "aws-scheduler";
 
 const userReminderJob = createJob({
   name: "Remind user before the event",
