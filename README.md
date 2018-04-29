@@ -1,5 +1,7 @@
 # Scheduler Cron API
 
+![Project Architecture](/docs/architecture.png?raw=true "Project Architecture")
+
 This package is responsible for creating new scheduled jobs, and adding them up to the queue when their time is due.
 
 When cron service is started, it connects to DynamoDB table, and gets previously created jobs.
