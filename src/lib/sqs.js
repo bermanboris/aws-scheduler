@@ -56,7 +56,10 @@ class SQS {
       if (!queueUrl) {
         return await this.createQueue(name);
       }
+
+      return queueUrl;
     } catch (err) {
+      console.log({ err });
       throw new Error("Cannot create queue.");
     }
   }

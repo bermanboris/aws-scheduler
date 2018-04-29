@@ -19,6 +19,7 @@ function DynamoDB(TableName = process.env.DYNAMODB_JOBS_TABLE || "__jobs__") {
       return Object.assign({}, all, {
         UpdateExpression: `${all.UpdateExpression}, ${key} = :${key}`,
         ExpressionAttributeValues: {
+          ...all.ExpressionAttributeValues,
           [`:${key}`]: data[key]
         }
       });

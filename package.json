@@ -1,7 +1,6 @@
 {
   "name": "@bermanboris/scheduler-cron-api",
-  "description":
-    "This package is responsible for adding up cron jobs to the queue when the time is due.",
+  "description": "This package is responsible for adding up cron jobs to the queue when the time is due.",
   "version": "1.0.3",
   "main": "./dist/index.js",
   "module": "./dist/index.js",
@@ -10,8 +9,7 @@
     "build": "babel --ignore **__mocks__/*.js src --out-dir dist",
     "build-watch": "babel --ignore **__mocks__/*.js src --out-dir dist -w",
     "start": "NODE_ENV=production node -r esm src/server.js",
-    "watch":
-      "nodemon -d 1 --ignore logs/ --exec node --require esm src/server.js",
+    "watch": "nodemon -d 1 --ignore logs/ --exec node --require esm src/server.js",
     "test": "jest"
   },
   "eslintConfig": {
@@ -20,7 +18,10 @@
       "node": true,
       "jest": true
     },
-    "extends": ["airbnb", "prettier"],
+    "extends": [
+      "airbnb",
+      "prettier"
+    ],
     "rules": {
       "class-methods-use-this": 0,
       "no-unused-vars": [
@@ -64,6 +65,7 @@
     "esm": "^3.0.17",
     "express": "^4.16.3",
     "moment": "^2.22.1",
+    "sqs-consumer": "^3.8.0",
     "uuid": "^3.2.1"
   },
   "devDependencies": {
@@ -95,7 +97,11 @@
     "type": "git",
     "url": "git+ssh://git@github.com/bermanboris/scheduler-cron-api.git"
   },
-  "keywords": ["cron", "aws", "sqs"],
+  "keywords": [
+    "cron",
+    "aws",
+    "sqs"
+  ],
   "author": "Boris Berman",
   "bugs": {
     "url": "https://github.com/bermanboris/scheduler-cron-api/issues"
